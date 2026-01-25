@@ -559,14 +559,16 @@
                     <div class="business-hours">
                         <h3>Business Hours</h3>
                         <ul class="hours-list">
-                            <li><span>Open Everyday until 8-9PM</span></li>
+                            <li><span>Every Day:</span> <span>11:00 AM - 8:00 PM</span></li>
+                            <li><span>Extended Hours:</span> <span>Until 9:00 PM</span></li>
                         </ul>
+                        <p style="margin-top: 10px; font-style: italic; color: var(--gray);">Open 7 days a week</p>
                     </div>
                 </div>
                 
                 <div class="contact-form">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" action="mailto:contact@omegatechnologyeg.com" method="post" enctype="text/plain">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -600,8 +602,11 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn">Send Message via Email</button>
                     </form>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">
+                        <i class="fas fa-info-circle"></i> This will open your email client to send us a message.
+                    </p>
                 </div>
             </div>
         </div>
@@ -673,6 +678,14 @@
                                 <span>contact@omegatechnologyeg.com</span>
                             </div>
                         </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <strong>Business Hours:</strong><br>
+                                <span>Everyday: 11:00 AM - 8:00 PM</span><br>
+                                <span>Extended until 9:00 PM</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -703,23 +716,8 @@
             });
         });
         
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            alert(`Thank you, ${name}! Your message has been received. We will contact you at ${email} regarding your ${subject} inquiry.`);
-            
-            // Reset form
-            this.reset();
-        });
+        // Contact form - no JavaScript needed for mailto: form
+        // The form will open the user's default email client
     </script>
 </body>
 </html>
