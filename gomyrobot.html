@@ -152,6 +152,15 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         
+        .btn-contact {
+            background-color: #1a237e;
+            margin-top: 15px;
+        }
+        
+        .btn-contact:hover {
+            background-color: #283593;
+        }
+        
         /* Courses Section */
         .section-title {
             text-align: center;
@@ -332,8 +341,8 @@
         
         .contact-detail {
             display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+            align-items: flex-start;
+            margin-bottom: 25px;
         }
         
         .contact-detail i {
@@ -346,22 +355,63 @@
             justify-content: center;
             margin-right: 15px;
             font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 3px;
         }
         
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
+        .contact-detail h4 {
+            color: #bbdefb;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-detail p, .contact-detail a {
+            color: white;
+            text-decoration: none;
+            line-height: 1.5;
+        }
+        
+        .contact-detail a:hover {
+            color: #bbdefb;
+            text-decoration: underline;
+        }
+        
+        .locations {
+            margin-top: 30px;
+        }
+        
+        .location-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
             margin-bottom: 20px;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
+            border-left: 4px solid #ff5722;
         }
         
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
+        .location-card h4 {
+            color: #bbdefb;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .location-card p {
+            margin-bottom: 10px;
+        }
+        
+        .map-container {
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .second-branch-map {
+            background-image: url("https://external.fcai19-7.fna.fbcdn.net/static_map.php?v=2066&theme=default&ccb=4-4&size=544x250&language=en_GB&scale=1&zoom=12&center=30.07219%2C31.32192&marker_list[0]=30.07219%2C31.32192&_nc_client_id=comet_profile_address_preview&_nc_client_caller=CometStaticMap.react");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 250px;
+            width: 100%;
+            max-width: 544px;
         }
         
         /* Footer */
@@ -397,6 +447,13 @@
         
         .footer-links li {
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links i {
+            margin-right: 10px;
+            width: 20px;
         }
         
         .footer-links a {
@@ -509,6 +566,14 @@
                 font-size: 1.1rem;
                 padding: 0 10px;
             }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .second-branch-map {
+                height: 200px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -527,6 +592,14 @@
             
             .course-card {
                 margin: 0 10px;
+            }
+            
+            .location-card {
+                padding: 15px;
+            }
+            
+            .second-branch-map {
+                height: 180px;
             }
         }
     </style>
@@ -689,18 +762,10 @@
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
                     <div class="contact-detail">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Our Location</h4>
-                            <p>Al Shorouk City, Cairo Governorate, Egypt</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <h4>Phone Number</h4>
-                            <p>+20 123 456 7890</p>
+                            <p><a href="tel:01080520938">010 80520938</a></p>
                         </div>
                     </div>
                     
@@ -708,7 +773,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email Address</h4>
-                            <p>info@gomyrobot.edu.eg</p>
+                            <p><a href="mailto:itsmyroboot@gmail.com">itsmyroboot@gmail.com</a></p>
                         </div>
                     </div>
                     
@@ -720,17 +785,27 @@
                             <p>Friday: 10:00 AM - 4:00 PM</p>
                         </div>
                     </div>
+                    
+                    <a href="mailto:itsmyroboot@gmail.com" class="btn btn-contact">Email Us Now</a>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="messageForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <div class="locations">
+                    <h3>Our Locations</h3>
+                    
+                    <div class="location-card">
+                        <h4>Main Branch</h4>
+                        <p><strong>Address:</strong> 51 الإسماعيليه، الشروق، محافظة القاهرة 4930981</p>
+                        <p><strong>Area:</strong> Al Shorouk City, Cairo Governorate</p>
+                    </div>
+                    
+                    <div class="location-card">
+                        <h4>Second Branch</h4>
+                        <p><strong>Address:</strong> Al Shorouk City, Cairo Governorate</p>
+                        <p><strong>Coordinates:</strong> 30.07219° N, 31.32192° E</p>
+                        <div class="map-container">
+                            <div class="second-branch-map"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -764,13 +839,12 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Our Courses</h3>
+                    <h3>Contact Information</h3>
                     <ul class="footer-links">
-                        <li><a href="#courses">Robotics & Programming</a></li>
-                        <li><a href="#courses">Drawing & Art</a></li>
-                        <li><a href="#courses">English Language</a></li>
-                        <li><a href="#courses">Arabic Language</a></li>
-                        <li><a href="#courses">Special Workshops</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:01080520938">010 80520938</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:itsmyroboot@gmail.com">itsmyroboot@gmail.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Al Shorouk City, Cairo</li>
+                        <li><i class="fas fa-clock"></i> Sat-Thu: 9AM-8PM</li>
                     </ul>
                 </div>
             </div>
@@ -807,14 +881,6 @@
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('messageForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
-            contactForm.reset();
         });
         
         // Smooth scrolling for anchor links
