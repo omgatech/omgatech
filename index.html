@@ -121,6 +121,16 @@
             color: var(--accent);
         }
         
+        .courses-button {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .courses-button:hover {
+            background-color: white;
+            color: var(--secondary);
+        }
+        
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -255,10 +265,91 @@
             margin-bottom: 15px;
         }
         
+        /* Courses Section */
+        .courses {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a3a5f 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .course-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .course-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .course-content {
+            padding: 30px;
+        }
+        
+        .course-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .course-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--light-gray);
+        }
+        
+        .course-features i {
+            color: var(--primary);
+        }
+        
+        .course-button {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .course-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
         /* Products Section */
         .products {
             padding: 100px 0;
-            background-color: var(--light-gray);
         }
         
         .product-tabs {
@@ -534,6 +625,10 @@
             .header-buttons {
                 display: none;
             }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -585,6 +680,13 @@
             .store-link {
                 padding: 12px 30px;
                 font-size: 1.1rem;
+            }
+            
+            .header-buttons-mobile {
+                display: flex;
+                gap: 10px;
+                margin-top: 20px;
+                flex-direction: column;
             }
         }
         
@@ -652,6 +754,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#courses">Courses</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#brands">Brands</a></li>
                     <li><a href="#store">Online Store</a></li>
@@ -663,7 +766,9 @@
                     <a href="https://store.omegatechnologyeg.com" target="_blank" class="cta-button store-button">
                         <i class="fas fa-store"></i> Visit Store
                     </a>
-                    <a href="contact.html" class="cta-button">Contact Us</a>
+                    <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button">
+                        <i class="fas fa-graduation-cap"></i> Our Courses
+                    </a>
                 </div>
             </nav>
             
@@ -672,7 +777,9 @@
                 <a href="https://store.omegatechnologyeg.com" target="_blank" class="cta-button store-button">
                     <i class="fas fa-store"></i> Online Store
                 </a>
-                <a href="contact.html" class="cta-button">Contact Us</a>
+                <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button">
+                    <i class="fas fa-graduation-cap"></i> Our Courses
+                </a>
             </div>
         </div>
     </header>
@@ -688,6 +795,9 @@
                     <a href="#products" class="btn-secondary">Shop Products</a>
                     <a href="https://store.omegatechnologyeg.com" target="_blank" class="cta-button store-button">
                         <i class="fas fa-store"></i> Visit Store
+                    </a>
+                    <a href="#courses" class="cta-button courses-button">
+                        <i class="fas fa-graduation-cap"></i> Explore Courses
                     </a>
                 </div>
             </div>
@@ -732,6 +842,87 @@
                     <h3>Arduino & Robotics</h3>
                     <p>Custom parts and components for Arduino and robotics projects, including specialized mounts, cases, and mechanisms.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Robotics & 3D Printing Courses</h2>
+                <p>Learn cutting-edge technology skills with our expert-led courses. From beginner to advanced levels, we provide comprehensive training.</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Go My Robot Course</h3>
+                        <p>Comprehensive Robotics Training</p>
+                    </div>
+                    <div class="course-content">
+                        <p>Master robotics from fundamentals to advanced applications. Perfect for students, hobbyists, and professionals.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Hands-on robotics projects</li>
+                            <li><i class="fas fa-check-circle"></i> Arduino programming</li>
+                            <li><i class="fas fa-check-circle"></i> Sensor integration</li>
+                            <li><i class="fas fa-check-circle"></i> Motor control systems</li>
+                            <li><i class="fas fa-check-circle"></i> Project-based learning</li>
+                        </ul>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="course-button">Learn More & Enroll</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3>3D Printing Mastery</h3>
+                        <p>From Design to Finished Product</p>
+                    </div>
+                    <div class="course-content">
+                        <p>Learn professional 3D printing techniques, design principles, and troubleshooting for perfect prints every time.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> CAD design fundamentals</li>
+                            <li><i class="fas fa-check-circle"></i> Slicer software mastery</li>
+                            <li><i class="fas fa-check-circle"></i> Material selection guide</li>
+                            <li><i class="fas fa-check-circle"></i> Troubleshooting common issues</li>
+                            <li><i class="fas fa-check-circle"></i> Post-processing techniques</li>
+                        </ul>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="course-button">Explore Course Details</a>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Arduino & Electronics</h3>
+                        <p>Embedded Systems Development</p>
+                    </div>
+                    <div class="course-content">
+                        <p>Dive into the world of microcontrollers and electronics. Build interactive projects with Arduino programming.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Arduino programming basics</li>
+                            <li><i class="fas fa-check-circle"></i> Circuit design & prototyping</li>
+                            <li><i class="fas fa-check-circle"></i> Sensor data acquisition</li>
+                            <li><i class="fas fa-check-circle"></i> Wireless communication</li>
+                            <li><i class="fas fa-check-circle"></i> Real-world project development</li>
+                        </ul>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="course-button">View Course Curriculum</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button" style="padding: 15px 40px; font-size: 1.1rem;">
+                    <i class="fas fa-external-link-alt"></i> Visit Our Courses Portal
+                </a>
             </div>
         </div>
     </section>
@@ -870,8 +1061,13 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Start Your 3D Printing Project?</h2>
-            <p>Whether you need a custom print, advice on materials, or a new printer setup, our team is here to help. Get in touch for a free quote or consultation.</p>
-            <a href="contact.html" class="cta-button">Contact Us Today</a>
+            <p>Whether you need a custom print, advice on materials, or want to learn robotics, our team is here to help.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="cta-button">Contact Us Today</a>
+                <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button">
+                    <i class="fas fa-graduation-cap"></i> Explore Courses
+                </a>
+            </div>
         </div>
     </section>
 
@@ -881,10 +1077,13 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>OMEGA Tech</h3>
-                    <p>Your partner in 3D printing and robotics innovation. We provide quality printing services and products for makers, hobbyists, and professionals across Egypt.</p>
-                    <div style="margin-top: 20px;">
+                    <p>Your partner in 3D printing and robotics innovation. We provide quality printing services, products, and courses for makers, hobbyists, and professionals across Egypt.</p>
+                    <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
                         <a href="https://store.omegatechnologyeg.com" target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">
-                            <i class="fas fa-store"></i> Online Store
+                            <i class="fas fa-store"></i> Store
+                        </a>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button" style="padding: 10px 20px; font-size: 0.9rem;">
+                            <i class="fas fa-graduation-cap"></i> Courses
                         </a>
                     </div>
                 </div>
@@ -894,6 +1093,7 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#courses">Courses</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#brands">Brands</a></li>
                         <li><a href="https://store.omegatechnologyeg.com" target="_blank">Online Store</a></li>
@@ -926,10 +1126,11 @@
                             </div>
                         </li>
                         <li>
-                            <i class="fas fa-store"></i>
+                            <i class="fas fa-clock"></i>
                             <div class="contact-text">
-                                <strong>Online Store:</strong><br>
-                                <span>store.omegatechnologyeg.com</span>
+                                <strong>Business Hours:</strong><br>
+                                <span>Everyday: 11:00 AM - 8:00 PM</span><br>
+                                <span>Extended until 9:00 PM</span>
                             </div>
                         </li>
                     </ul>
@@ -937,7 +1138,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 OMEGA Tech. All rights reserved. | Specializing in FDM 3D Printing Services & Arduino Robotics</p>
+                <p>&copy; 2026 OMEGA Tech. All rights reserved. | Specializing in FDM 3D Printing Services, Robotics Courses & Arduino Projects</p>
             </div>
         </div>
     </footer>
