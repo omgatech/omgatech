@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Reviews | OMEGA Tech</title>
+    <title>OMEGA Tech | 3D Printing & Robotics Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
         :root {
-            --primary: #FF6B35;
-            --secondary: #004E89;
-            --accent: #00A896;
+            --primary: #FF6B35; /* OMEGA orange accent */
+            --secondary: #004E89; /* Dark blue */
+            --accent: #00A896; /* Teal */
             --dark: #1A1A2E;
             --light: #F8F9FA;
             --gray: #6c757d;
@@ -140,177 +140,352 @@
             cursor: pointer;
         }
         
-        /* Page Header */
-        .page-header {
-            padding: 100px 0 60px;
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .page-header h1 {
-            font-size: 3rem;
-            color: var(--dark);
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
             margin-bottom: 20px;
+            color: var(--dark);
         }
         
-        .page-header p {
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
             font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
         }
         
-        /* Reviews Stats */
-        .reviews-stats {
-            padding: 60px 0;
-            background-color: white;
-            text-align: center;
+        .services {
+            padding: 100px 0;
         }
         
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .stat-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            min-width: 200px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            color: var(--gray);
-        }
-        
-        /* Reviews Grid */
-        .reviews-section {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-        
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        
-        .review-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-        }
-        
-        .review-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        .review-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        
-        .review-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--light-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .reviewer-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-        
-        .review-date {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        .review-stars {
-            color: #FFD700;
-            margin-bottom: 15px;
-        }
-        
-        .review-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        /* Screenshot Gallery */
-        .screenshot-gallery {
-            padding: 60px 0;
-            background-color: white;
-        }
-        
-        .gallery-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--dark);
-        }
-        
-        .gallery-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .screenshot-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+        .service-card {
             background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
         }
         
-        .screenshot-item:hover {
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Courses Section */
+        .courses {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         
-        .screenshot-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 3px solid var(--primary);
-        }
-        
-        .screenshot-caption {
-            padding: 20px;
+        .course-header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a3a5f 100%);
+            color: white;
+            padding: 30px;
             text-align: center;
-            background-color: white;
         }
         
-        .screenshot-caption h3 {
-            font-size: 1.2rem;
+        .course-header h3 {
+            font-size: 1.8rem;
             margin-bottom: 10px;
-            color: var(--dark);
+        }
+        
+        .course-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .course-content {
+            padding: 30px;
+        }
+        
+        .course-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .course-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--light-gray);
+        }
+        
+        .course-features i {
+            color: var(--primary);
+        }
+        
+        .course-button {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .course-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+        }
+        
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .brand-tag {
+            display: inline-block;
+            background-color: var(--light-gray);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Store CTA Section */
+        .store-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a3a5f 100%);
+            color: white;
+        }
+        
+        .store-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .store-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .store-link {
+            font-size: 1.3rem;
+            background-color: white;
+            color: var(--secondary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .store-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Brands Section */
+        .brands {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .brands-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .brand-logo {
+            font-size: 2.5rem;
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+        
+        .brand-logo:hover {
+            color: var(--primary);
         }
         
         /* CTA Section */
@@ -332,13 +507,6 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
         }
         
         .cta-section .cta-button {
@@ -441,12 +609,25 @@
         
         /* Responsive Styles */
         @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
             .header-buttons {
                 display: none;
             }
             
-            .reviews-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            .courses-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -480,12 +661,25 @@
                 gap: 20px;
             }
             
-            .page-header h1 {
-                font-size: 2.5rem;
+            .hero h1 {
+                font-size: 2.3rem;
             }
             
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .brands-logos {
+                gap: 30px;
+            }
+            
+            .brand-logo {
+                font-size: 2rem;
+            }
+            
+            .store-link {
+                padding: 12px 30px;
+                font-size: 1.1rem;
             }
             
             .header-buttons-mobile {
@@ -493,11 +687,6 @@
                 gap: 10px;
                 margin-top: 20px;
                 flex-direction: column;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
             }
         }
         
@@ -510,16 +699,23 @@
                 height: 40px;
             }
             
-            .page-header h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
             
-            .review-card {
-                padding: 20px;
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .reviews-grid {
-                grid-template-columns: 1fr;
+            .cta-button, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .tab-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
             }
             
             .header-buttons-mobile {
@@ -557,12 +753,11 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#courses">Courses</a></li>
-                    <li><a href="index.html#products">Products</a></li>
-                    <li><a href="index.html#brands">Brands</a></li>
-                    <li><a href="index.html#store">Online Store</a></li>
-                    <li><a href="reviews.html" class="active">Reviews</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#brands">Brands</a></li>
+                    <li><a href="#store">Online Store</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 
@@ -589,237 +784,274 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Customer Reviews</h1>
-            <p>See what our customers are saying about OMEGA Tech's 3D printing services, products, and courses.</p>
-        </div>
-    </section>
-
-    <!-- Reviews Stats -->
-    <section class="reviews-stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-number">5.0★</div>
-                    <div class="stat-label">Average Rating</div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Your <span>3D Printing</span> & Robotics Partner</h1>
+                <p>Professional FDM 3D printing services, premium filaments, resins, and top-brand printers in Cairo. From Arduino robotics to custom prototypes, OMEGA Tech delivers precision and quality.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="cta-button">Our Services</a>
+                    <a href="#products" class="btn-secondary">Shop Products</a>
+                    <a href="https://store.omegatechnologyeg.com" target="_blank" class="cta-button store-button">
+                        <i class="fas fa-store"></i> Visit Store
+                    </a>
+                    <a href="#courses" class="cta-button courses-button">
+                        <i class="fas fa-graduation-cap"></i> Explore Courses
+                    </a>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Happy Customers</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Satisfaction Rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Featured Reviews</div>
+            </div>
+            <div class="hero-image">
+                <!-- 3D printer visualization -->
+                <div style="width: 100%; max-width: 500px; height: 350px; background-color: #e2edff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 8rem; color: var(--primary);">
+                    <i class="fas fa-print"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Grid -->
-    <section class="reviews-section">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="reviews-grid">
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <h3>Ahmed Mohamed</h3>
-                            <div class="review-date">March 15, 2024</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="review-text">
-                        "Excellent quality 3D printing service! The team at OMEGA Tech delivered my custom Arduino robot parts with perfect precision. The filaments are top quality and the finish is professional."
-                    </div>
-                    <div class="review-service">
-                        <strong>Service Used:</strong> Custom 3D Printing
-                    </div>
-                </div>
-                
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <h3>Sarah Mahmoud</h3>
-                            <div class="review-date">February 28, 2024</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="review-text">
-                        "Bought an AnyCubic printer from them and the setup support was amazing! They helped me through the entire process and even recommended the perfect filaments for my projects. Highly recommended!"
-                    </div>
-                    <div class="review-service">
-                        <strong>Service Used:</strong> Printer Purchase & Support
-                    </div>
-                </div>
-                
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <h3>Omar Hassan</h3>
-                            <div class="review-date">January 10, 2024</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="review-text">
-                        "The robotics course changed everything for me! Professional instructors, hands-on projects, and excellent support. Now I can build my own Arduino robots confidently."
-                    </div>
-                    <div class="review-service">
-                        <strong>Service Used:</strong> Go My Robot Course
-                    </div>
-                </div>
-                
-                <!-- Review 4 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <h3>Layla Ahmed</h3>
-                            <div class="review-date">December 5, 2023</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="review-text">
-                        "Perfect service for my university project! They printed complex mechanical parts with excellent accuracy. Fast delivery and reasonable prices. Will definitely use again!"
-                    </div>
-                    <div class="review-service">
-                        <strong>Service Used:</strong> Academic Project Printing
-                    </div>
-                </div>
-                
-                <!-- Review 5 -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <h3>Karim Youssef</h3>
-                            <div class="review-date">November 20, 2023</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="review-text">
-                        "Outstanding customer service! They helped me choose the right resin for my miniatures printing business. The quality is consistent and their technical advice saved me time and money."
-                    </div>
-                    <div class="review-service">
-                        <strong>Service Used:</strong> Resin Printing Supplies
-                    </div>
-                </div>
+            <div class="section-title">
+                <h2>Our 3D Printing Services</h2>
+                <p>OMEGA Tech specializes in FDM 3D printing solutions for prototyping, custom parts, and specialized projects across Egypt.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Screenshot Gallery -->
-    <section class="screenshot-gallery">
-        <div class="container">
-            <h2 class="gallery-title">Real Customer Reviews</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: var(--gray); max-width: 800px; margin-left: auto; margin-right: auto;">
-                Here are screenshots of actual reviews from our satisfied customers. Click on any image to view it larger.
-            </p>
             
-            <div class="gallery-grid">
-                <!-- Review Screenshot 1 -->
-                <div class="screenshot-item">
-                    <a href="https://i.ibb.co/RpC35L1k/Screenshot-13.png" target="_blank">
-                        <img src="https://i.ibb.co/RpC35L1k/Screenshot-13.png" alt="Customer Review Screenshot 1">
-                    </a>
-                    <div class="screenshot-caption">
-                        <h3>Perfect Quality Printing</h3>
-                        <p>"Excellent service and perfect print quality"</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>FDM 3D Printing</h3>
+                    <p>High-quality FDM printing services with various material options for prototypes, functional parts, and custom designs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Prototyping & Design</h3>
+                    <p>From concept to finished product, we help design and prototype your ideas with expert guidance and precision printing.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Arduino & Robotics</h3>
+                    <p>Custom parts and components for Arduino and robotics projects, including specialized mounts, cases, and mechanisms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Robotics & 3D Printing Courses</h2>
+                <p>Learn cutting-edge technology skills with our expert-led courses. From beginner to advanced levels, we provide comprehensive training.</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Go My Robot Course</h3>
+                        <p>Comprehensive Robotics Training</p>
+                    </div>
+                    <div class="course-content">
+                        <p>Master robotics from fundamentals to advanced applications. Perfect for students, hobbyists, and professionals.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Hands-on robotics projects</li>
+                            <li><i class="fas fa-check-circle"></i> Arduino programming</li>
+                            <li><i class="fas fa-check-circle"></i> Sensor integration</li>
+                            <li><i class="fas fa-check-circle"></i> Motor control systems</li>
+                            <li><i class="fas fa-check-circle"></i> Project-based learning</li>
+                        </ul>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="course-button">Learn More & Enroll</a>
                     </div>
                 </div>
                 
-                <!-- Review Screenshot 2 -->
-                <div class="screenshot-item">
-                    <a href="https://i.ibb.co/YFh9YZx5/Screenshot-14.png" target="_blank">
-                        <img src="https://i.ibb.co/YFh9YZx5/Screenshot-14.png" alt="Customer Review Screenshot 2">
-                    </a>
-                    <div class="screenshot-caption">
-                        <h3>Great Support</h3>
-                        <p>"Amazing customer support and guidance"</p>
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3>3D Printing Mastery</h3>
+                        <p>From Design to Finished Product</p>
+                    </div>
+                    <div class="course-content">
+                        <p>Learn professional 3D printing techniques, design principles, and troubleshooting for perfect prints every time.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> CAD design fundamentals</li>
+                            <li><i class="fas fa-check-circle"></i> Slicer software mastery</li>
+                            <li><i class="fas fa-check-circle"></i> Material selection guide</li>
+                            <li><i class="fas fa-check-circle"></i> Troubleshooting common issues</li>
+                            <li><i class="fas fa-check-circle"></i> Post-processing techniques</li>
+                        </ul>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="course-button">Explore Course Details</a>
                     </div>
                 </div>
                 
-                <!-- Review Screenshot 3 -->
-                <div class="screenshot-item">
-                    <a href="https://i.ibb.co/mCLkW7ck/Screenshot-15.png" target="_blank">
-                        <img src="https://i.ibb.co/mCLkW7ck/Screenshot-15.png" alt="Customer Review Screenshot 3">
-                    </a>
-                    <div class="screenshot-caption">
-                        <h3>Course Recommendation</h3>
-                        <p>"Highly recommended robotics course"</p>
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Arduino & Electronics</h3>
+                        <p>Embedded Systems Development</p>
+                    </div>
+                    <div class="course-content">
+                        <p>Dive into the world of microcontrollers and electronics. Build interactive projects with Arduino programming.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Arduino programming basics</li>
+                            <li><i class="fas fa-check-circle"></i> Circuit design & prototyping</li>
+                            <li><i class="fas fa-check-circle"></i> Sensor data acquisition</li>
+                            <li><i class="fas fa-check-circle"></i> Wireless communication</li>
+                            <li><i class="fas fa-check-circle"></i> Real-world project development</li>
+                        </ul>
+                        <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="course-button">View Course Curriculum</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button" style="padding: 15px 40px; font-size: 1.1rem;">
+                    <i class="fas fa-external-link-alt"></i> Visit Our Courses Portal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>We supply high-quality filaments, resins, and printers from leading brands in the 3D printing industry.</p>
+            </div>
+            
+            <div class="product-tabs">
+                <button class="tab-btn active" data-tab="filaments">Filaments & Resins</button>
+                <button class="tab-btn" data-tab="printers">3D Printers</button>
+                <button class="tab-btn" data-tab="accessories">Accessories</button>
+            </div>
+            
+            <div class="products-grid" id="filamentsTab">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-spool"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>eSun Filaments</h3>
+                        <span class="brand-tag">eSun</span>
+                        <p>Premium PLA, ABS, PETG, and specialty filaments in a wide range of colors and finishes. Currently our main filament supplier.</p>
                     </div>
                 </div>
                 
-                <!-- Review Screenshot 4 -->
-                <div class="screenshot-item">
-                    <a href="https://i.ibb.co/7x88WF6N/Screenshot-16.png" target="_blank">
-                        <img src="https://i.ibb.co/7x88WF6N/Screenshot-16.png" alt="Customer Review Screenshot 4">
-                    </a>
-                    <div class="screenshot-caption">
-                        <h3>Fast Delivery</h3>
-                        <p>"Quick service and fast delivery"</p>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>3D Printing Resins</h3>
+                        <span class="brand-tag">AnyCubic & iFUN</span>
+                        <p>High-resolution resins for detailed prints, including standard, tough, and flexible formulations.</p>
                     </div>
                 </div>
                 
-                <!-- Review Screenshot 5 -->
-                <div class="screenshot-item">
-                    <a href="https://i.ibb.co/B5x6m3wt/Screenshot-17.png" target="_blank">
-                        <img src="https://i.ibb.co/B5x6m3wt/Screenshot-17.png" alt="Customer Review Screenshot 5">
-                    </a>
-                    <div class="screenshot-caption">
-                        <h3>Professional Service</h3>
-                        <p>"Professional team and excellent results"</p>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-plus-circle"></i>
                     </div>
+                    <div class="product-content">
+                        <h3>More Brands Coming Soon</h3>
+                        <span class="brand-tag">Expanding Range</span>
+                        <p>We're continuously expanding our filament offerings to include more brands and specialty materials.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="printersTab" style="display: none;">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>FDM Printers</h3>
+                        <span class="brand-tag">Creality & AnyCubic</span>
+                        <p>Reliable FDM printers from entry-level to professional models for every budget and need.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Resin Printers</h3>
+                        <span class="brand-tag">ELEGOO & AnyCubic</span>
+                        <p>High-resolution resin printers for detailed miniatures, jewelry, and industrial applications.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Complete Printer Packages</h3>
+                        <span class="brand-tag">Ready-to-Use</span>
+                        <p>Get started with everything you need: printer, filaments/resins, and essential accessories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store CTA Section -->
+    <section class="store-cta" id="store">
+        <div class="container">
+            <h2>Shop Our Online Store</h2>
+            <p>Browse our complete selection of 3D printers, filaments, resins, and accessories. Fast delivery across Egypt.</p>
+            <a href="https://store.omegatechnologyeg.com" target="_blank" class="store-link">
+                <i class="fas fa-external-link-alt"></i> Visit store.omegatechnologyeg.com
+            </a>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands" id="brands">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted Brands We Carry</h2>
+                <p>We partner with industry-leading manufacturers to bring you the best 3D printing products available in Egypt.</p>
+            </div>
+            
+            <div class="brands-logos">
+                <div class="brand-logo">
+                    <i class="fab fa-creative-commons"></i>
+                    <div style="font-size: 1rem; margin-top: 5px;">eSun</div>
+                </div>
+                <div class="brand-logo">
+                    <i class="fas fa-cube"></i>
+                    <div style="font-size: 1rem; margin-top: 5px;">AnyCubic</div>
+                </div>
+                <div class="brand-logo">
+                    <i class="fas fa-robot"></i>
+                    <div style="font-size: 1rem; margin-top: 5px;">ELEGOO</div>
+                </div>
+                <div class="brand-logo">
+                    <i class="fas fa-industry"></i>
+                    <div style="font-size: 1rem; margin-top: 5px;">Creality</div>
+                </div>
+                <div class="brand-logo">
+                    <i class="fas fa-fun"></i>
+                    <div style="font-size: 1rem; margin-top: 5px;">iFUN</div>
                 </div>
             </div>
         </div>
@@ -828,13 +1060,10 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Join Our Satisfied Customers</h2>
-            <p>Experience the quality and service that our customers rave about. Whether you need 3D printing, products, or courses, we're here to help.</p>
-            <div class="cta-buttons">
+            <h2>Ready to Start Your 3D Printing Project?</h2>
+            <p>Whether you need a custom print, advice on materials, or want to learn robotics, our team is here to help.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <a href="contact.html" class="cta-button">Contact Us Today</a>
-                <a href="https://store.omegatechnologyeg.com" target="_blank" class="cta-button store-button">
-                    <i class="fas fa-store"></i> Shop Now
-                </a>
                 <a href="https://omegatechnologyeg.com/gomyrobot.html" target="_blank" class="cta-button courses-button">
                     <i class="fas fa-graduation-cap"></i> Explore Courses
                 </a>
@@ -863,11 +1092,11 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#courses">Courses</a></li>
-                        <li><a href="index.html#products">Products</a></li>
-                        <li><a href="index.html#brands">Brands</a></li>
-                        <li><a href="reviews.html">Customer Reviews</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="https://store.omegatechnologyeg.com" target="_blank">Online Store</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -931,6 +1160,54 @@
             link.addEventListener('click', () => {
                 mainNav.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Product tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const filamentsTab = document.getElementById('filamentsTab');
+        const printersTab = document.getElementById('printersTab');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                
+                if (tabId === 'filaments') {
+                    filamentsTab.style.display = 'grid';
+                    printersTab.style.display = 'none';
+                } else if (tabId === 'printers') {
+                    filamentsTab.style.display = 'none';
+                    printersTab.style.display = 'grid';
+                } else {
+                    // For accessories tab, show filaments for now
+                    filamentsTab.style.display = 'grid';
+                    printersTab.style.display = 'none';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
