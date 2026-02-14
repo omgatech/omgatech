@@ -488,6 +488,62 @@
             color: var(--primary);
         }
         
+        /* Partners Section */
+        .partners {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+            overflow: hidden;
+        }
+        
+        .partners-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .partners-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+        
+        .partners-scroll {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: max-content;
+        }
+        
+        .partners-scroll:hover {
+            animation-play-state: paused;
+        }
+        
+        .partner-item {
+            flex-shrink: 0;
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-item img {
+            max-height: 80px;
+            max-width: 200px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        
+        .partner-item img:hover {
+            filter: grayscale(0%);
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
@@ -757,6 +813,7 @@
         <li><a href="index.html#courses">Courses</a></li>
         <li><a href="index.html#products">Products</a></li>
         <li><a href="index.html#brands">Brands</a></li>
+        <li><a href="index.html#partners">Partners</a></li>
         <li><a href="index.html#store">Online Store</a></li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -1059,6 +1116,29 @@
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="partners-title">
+                <h2>Our Partners</h2>
+            </div>
+            <div class="partners-scroll">
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f1/UniversiteFrancaisedEgypteNewLogo.png" alt="Université Française d'Égypte">
+                </div>
+                <div class="partner-item">
+                    <img src="https://static.zyda.com/photos/restaurants/logo_urls/4771/original/Fati's_Logo_%281%29.png?1703287961" alt="Fati's">
+                </div>
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f1/UniversiteFrancaisedEgypteNewLogo.png" alt="Université Française d'Égypte">
+                </div>
+                <div class="partner-item">
+                    <img src="https://static.zyda.com/photos/restaurants/logo_urls/4771/original/Fati's_Logo_%281%29.png?1703287961" alt="Fati's">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -1098,6 +1178,7 @@
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#brands">Brands</a></li>
+                        <li><a href="#partners">Partners</a></li>
                         <li><a href="https://store.omegatechnologyeg.com" target="_blank">Online Store</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
